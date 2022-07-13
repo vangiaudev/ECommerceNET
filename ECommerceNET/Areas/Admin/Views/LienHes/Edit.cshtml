@@ -1,0 +1,65 @@
+﻿@model ECommerceNET.Entities.LienHe
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+    <h1>Chỉnh sửa</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="idLH" />
+                <div class="form-group">
+                    <label asp-for="hoTen" class="control-label"></label>
+                    <input asp-for="hoTen" class="form-control" disabled />
+                    <span asp-validation-for="hoTen" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="eMail" class="control-label"></label>
+                    <input asp-for="eMail" class="form-control" disabled />
+                    <span asp-validation-for="eMail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="tieuDe" class="control-label"></label>
+                    <input asp-for="tieuDe" class="form-control" disabled />
+                    <span asp-validation-for="tieuDe" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="noiDung" class="control-label"></label>
+                    <input asp-for="noiDung" class="form-control" disabled />
+                    <span asp-validation-for="noiDung" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ngayGui" class="control-label"></label>
+                    <input asp-for="ngayGui" class="form-control" disabled />
+                    <span asp-validation-for="ngayGui" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ngayCapNhat" class="control-label"></label>
+                    <input asp-for="ngayCapNhat" class="form-control" disabled />
+                    <span asp-validation-for="ngayCapNhat" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="trangThai" class="control-label"></label>
+                    <select asp-for="trangThai" class="form-control">
+                        <option value="Đang xử lý" selected="selected">Đang xử lý</option>
+                        <option value="Đã xử lý">Đã xử lý</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    </div>

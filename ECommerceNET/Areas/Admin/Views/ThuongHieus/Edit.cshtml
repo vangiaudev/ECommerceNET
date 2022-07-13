@@ -1,0 +1,50 @@
+﻿@model ECommerceNET.Entities.ThuongHieu
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+    <h1>Chỉnh sửa</h1>
+
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="idThuongHieu" />
+                <div class="form-group">
+                    <label asp-for="tenThuongHieu" class="control-label">Tên thương hiệu</label>
+                    <input asp-for="tenThuongHieu" class="form-control" />
+                    <span asp-validation-for="tenThuongHieu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="hinhLogo" class="control-label">Logo</label>
+                    <input asp-for="hinhLogo" class="form-control" />
+                    <span asp-validation-for="hinhLogo" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="sdtThuongHieu" class="control-label">SĐT</label>
+                    <input asp-for="sdtThuongHieu" class="form-control" />
+                    <span asp-validation-for="sdtThuongHieu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="emailThuongHieu" class="control-label">Email</label>
+                    <input asp-for="emailThuongHieu" class="form-control" />
+                    <span asp-validation-for="emailThuongHieu" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    </div>

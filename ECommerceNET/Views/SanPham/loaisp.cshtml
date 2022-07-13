@@ -1,0 +1,127 @@
+﻿@model IEnumerable<ECommerceNET.Entities.SanPham>
+
+@{
+    ViewData["Title"] = "loaisp";
+    Layout = "_FrontEnd";
+}
+<div class="product-view">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="product-view-top">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="product-search">
+                                        <input type="email" id="timkiemdssp" placeholder="Tìm kiếm">
+                                        <button><i class="fa fa-search"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <!--      <div class="product-short">
+                            <div class="dropdown">
+                                <div class="dropdown-toggle" data-toggle="dropdown">Product short by</div>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="#" class="dropdown-item">Newest</a>
+                                    <a href="#" class="dropdown-item">Popular</a>
+                                    <a href="#" class="dropdown-item">Most sale</a>
+                                </div>
+                            </div>
+                        </div>-->
+                                    <select class="col-md-12" id="dssp2">
+
+                                        <option value="0">-----</option>
+                                        <option value="1">Mới nhất</option>
+                                        <option value="2">Bán chạy</option>
+                                        <option value="3">Nổi bật</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <!--          <div class="product-price-range">
+                                <div class="dropdown">
+                                    <div class="dropdown-toggle" data-toggle="dropdown">Product price range</div>
+                                    <div class="dropdown-menu dropdown-menu-right">
+
+                                        <a href="#" class="dropdown-item">50.000đ - 100.000đ</a>
+                                        <a href="#" class="dropdown-item">101.000đ - 200.000đ</a>
+                                        <a href="#" class="dropdown-item">201.000đ - 300.000đ</a>
+                                        <a href="#" class="dropdown-item">301.000đ - 400.000đ</a>
+                                        <a href="#" class="dropdown-item">401.000đ - 500.000đ</a>
+                                        <a href="#" class="dropdown-item">501.000đ - 700.000đ</a>
+                                        <a href="#" class="dropdown-item">701.000đ - 1.000.000đ</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                                    <select class="col-md-12" id="dssp3">
+
+                                        <option value="0">-----</option>
+                                        <option value="1">50.000đ - 100.000đ</option>
+                                        <option value="2">101.00đ - 300.000đ</option>
+                                        <option value="3">301.000đ - 500.000đ</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="kquadssp" class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-md-3">
+                                <form asp-action="addtocart" asp-controller="GioHang" asp-route-id="@item.idSP">
+                                    <div class="product-item">
+                                        <div class="product-title">
+                                            <a href="/@SlugGenerator.SlugGenerator.GenerateSlug(item.tenSP)-@item.idSP/">@Html.DisplayFor(modelItem => item.tenSP)</a>
+                                        </div>
+                                        <div class="product-image">
+                                            <a href="/@SlugGenerator.SlugGenerator.GenerateSlug(item.tenSP)-@item.idSP/">
+
+                                                <img src="~/images/sanpham/@Html.DisplayFor(modelItem => item.hinhAnh)" />
+                                            </a>
+                                            <div class="product-action">
+                                                <!--       <a class="add-cart-xx"><i class="fa fa-cart-plus"></i></a>
+                -->
+                                            </div>
+                                        </div>
+                                        <div class="product-price">
+                                            <h3>@Html.DisplayFor(modelItem => item.giaSP) đ</h3>
+                                            <button class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</button>
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+
+                <!-- Pagination Start -->
+                <!--     <div class="col-md-12">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>-->
+                <!-- Pagination Start -->
+            </div>
+
+        </div>
+    </div>
+</div>
+   
+    <input hidden value="@ViewBag.mess" id="idloaidssp" />
+

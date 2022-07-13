@@ -1,0 +1,62 @@
+﻿@model ECommerceNET.Entities.MaGiamGia
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+    <h1>Thông tin</h1>
+
+    <div>
+
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Code
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.codeMGG)
+            </dd>
+            <dt class="col-sm-2">
+                Tên mã giảm giá
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.tenMGG)
+            </dd>
+            <dt class="col-sm-2">
+                Giá trị
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.giaTri)
+            </dd>
+            <dt class="col-sm-2">
+                Số lượng
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.soLuong)
+            </dd>
+            <dt class="col-sm-2">
+                Trạng thái
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.trangThai)
+            </dd>
+            <dt class="col-sm-2">
+                Ngày tạo
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ngayTao)
+            </dd>
+            <dt class="col-sm-2">
+                Ngày cập nhật
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ngayCapNhat)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.codeMGG">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+    </div>

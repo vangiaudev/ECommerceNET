@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "_FrontEnd";
+}
+<div class="col-md-6">
+    <label>Nhập mật khẩu mới</label>
+    <input class="form-control" id="qmk" type="text" placeholder="Nhập mật khẩu mới">
+    <input class="form-control" id="reqmk" type="text" placeholder="Nhập lại mật khẩu mới">
+</div>
+<div class="col-md-12">
+    <button class="btn" id="xacnhan">Xác nhận</button>
+</div>
+<div id="kqua" style="color:red"></div>
+
+
+<script>
+
+    $(document).ready(function () {
+        $("#xacnhan").click(function () {
+            if ($("#qmk").val() != $("#reqmk").val()) {
+                $("#kqua").html("Mật khẩu không trùng khớp!")
+            } else {
+                $.ajax({
+
+                    url: "/DoiMatKhau/LuuMatKhau/",
+                    data: {
+                        qmk: $("#qmk").val().trim(),
+
+                    },
+                    type: "POST",
+                    success: function (data) {
+
+                        if (data == "0") {
+                            $("#kqua").html("Đổi mật khẩu không thành công!")
+                        }
+                        else {
+                            window.location = "/Home/index/"
+                        }
+
+                    },
+                });
+
+            }
+           
+             
+            
+
+        });
+    });
+</script>

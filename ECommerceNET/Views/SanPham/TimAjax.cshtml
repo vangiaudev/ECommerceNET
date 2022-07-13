@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ECommerceNET.Entities.SanPham>
+
+@{
+    ViewData["Title"] = "TimAjax";
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+<div class="col-md-3">
+    <form asp-action="addtocart" asp-controller="GioHang" asp-route-id="@item.idSP">
+        <div class="product-item">
+            <div class="product-title">
+                <a href="/@SlugGenerator.SlugGenerator.GenerateSlug(item.tenSP)-@item.idSP/">@Html.DisplayFor(modelItem => item.tenSP)</a>
+            </div>
+            <div class="product-image">
+                <a href="/@SlugGenerator.SlugGenerator.GenerateSlug(item.tenSP)-@item.idSP/">
+
+                    <img src="~/images/sanpham/@Html.DisplayFor(modelItem => item.hinhAnh)" />
+                </a>
+                <div class="product-action">
+                    <!--       <a class="add-cart-xx"><i class="fa fa-cart-plus"></i></a>
+                -->
+                </div>
+            </div>
+            <div class="product-price">
+                <h3>@Html.DisplayFor(modelItem => item.giaSP) đ</h3>
+                <button class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+}

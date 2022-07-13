@@ -1,0 +1,62 @@
+﻿@model ECommerceNET.Entities.LienHe
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+    <h1>Thông tin</h1>
+
+    <div>
+      
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Họ tên người gửi
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.hoTen)
+            </dd>
+            <dt class="col-sm-2">
+                Email
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.eMail)
+            </dd>
+            <dt class="col-sm-2">
+                Tiêu đề
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.tieuDe)
+            </dd>
+            <dt class="col-sm-2">
+                Nội dung
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.noiDung)
+            </dd>
+            <dt class="col-sm-2">
+                Ngày gửi
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ngayGui)
+            </dd>
+            <dt class="col-sm-2">
+                Ngày cập nhật
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ngayCapNhat)
+            </dd>
+            <dt class="col-sm-2">
+                Trạng thái
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.trangThai)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.idLH">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+    </div>

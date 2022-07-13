@@ -1,0 +1,58 @@
+﻿@model ECommerceNET.Entities.MaGiamGia
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+    <h1>Chỉnh sửa</h1>
+
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="codeMGG" />
+                <div class="form-group">
+                    <label asp-for="codeMGG" class="control-label">Code</label>
+                    <input asp-for="codeMGG" class="form-control" disabled />
+                    <span asp-validation-for="codeMGG" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="tenMGG" class="control-label">Tên mã giảm giá</label>
+                    <input asp-for="tenMGG" class="form-control" />
+                    <span asp-validation-for="tenMGG" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="giaTri" class="control-label">Số tiền giảm</label>
+                    <input asp-for="giaTri" class="form-control" />
+                    <span asp-validation-for="giaTri" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="soLuong" class="control-label">Số lượng</label>
+                    <input asp-for="soLuong" class="form-control" />
+                    <span asp-validation-for="soLuong" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="trangThai" class="control-label">Trạng thái</label>
+                    <select asp-for="trangThai" class="form-control">
+                        <option value="Hiển thị" selected="selected">Hiển thị</option>
+                        <option value="Ẩn">Ẩn</option>
+
+                    </select>
+                    <span asp-validation-for="trangThai" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    </div>

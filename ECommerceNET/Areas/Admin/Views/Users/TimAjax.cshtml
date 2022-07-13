@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ECommerceNET.Entities.User>
+
+@foreach (var item in Model)
+{
+
+
+<tr>
+    <td>
+
+        <img src="~/images/user/@Html.DisplayFor(modelItem => item.hinhAVT)" style="width:80px;height:80px " alt="@Html.DisplayFor(modelItem => item.hinhAVT)" />
+
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hoUser)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tenUser)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.sdtUser)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.emailUser)
+    </td>
+
+
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.ngayTao)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ngayCapNhat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hoatDongLanCuoi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.trangThai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.vaiTro)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.idUser">Sửa</a> |
+        <a asp-action="Details" asp-route-id="@item.idUser">Xem</a> |
+        <a asp-action="Delete" asp-route-id="@item.idUser">Xóa</a>
+    </td>
+</tr>
+
+}

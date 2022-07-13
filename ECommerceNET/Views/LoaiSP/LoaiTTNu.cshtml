@@ -1,0 +1,10 @@
+﻿@model IEnumerable<ECommerceNET.Entities.LoaiSP>
+
+@{
+    ViewData["Title"] = "LoaiTTNu";
+    Layout = null;
+}       
+@foreach (var item in Model) {
+<a href="/SanPham/LoaiSP/@SlugGenerator.SlugGenerator.GenerateSlug(item.tenLoaiSP)-@item.idLoaiSP" class="dropdown-item">@Html.DisplayFor(modelItem => item.tenLoaiSP)</a>
+}
+    

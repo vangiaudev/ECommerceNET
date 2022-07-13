@@ -1,0 +1,69 @@
+﻿@model IEnumerable<ECommerceNET.Entities.SanPham>
+
+@{
+    ViewData["Title"] = "sanphambanchay";
+    Layout = null;
+}
+<div class="featured-product product">
+    <div class="container-fluid">
+        <div class="section-header section-header-wrapper">
+            <h1>Sản phẩm bán chạy nhất</h1>
+        </div>
+        <div class="row align-items-center product-slider product-slider-4">
+            @foreach (var item in Model)
+            {
+
+
+
+                <div class="col-lg-3">
+                    <form asp-action="addtocart" asp-controller="GioHang" asp-route-id="@item.idSP">
+                        <div class="product-item">
+                            <div class="product-title">
+                                <a href="/@SlugGenerator.SlugGenerator.GenerateSlug(item.tenSP)-@item.idSP/">@Html.DisplayFor(modelItem => item.tenSP)</a>
+                            </div>
+                            <div class="product-image">
+                                <a href="/@SlugGenerator.SlugGenerator.GenerateSlug(item.tenSP)-@item.idSP/">
+
+                                    <img src="~/images/sanpham/@Html.DisplayFor(modelItem => item.hinhAnh)" />
+                                </a>
+                                <div class="product-action">
+                                    <!--       <a class="add-cart-xx"><i class="fa fa-cart-plus"></i></a>
+                            -->
+                                </div>
+                            </div>
+                            <div class="product-price">
+                                <h3>@Html.DisplayFor(modelItem => item.giaSP) đ</h3>
+                                <button class="btn" href=""><i class="fa fa-shopping-cart"></i>Mua ngay</button>
+                            </div>
+
+                        </div>
+                    </form>
+
+
+                </div>
+
+            }
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="~/ecommerce-html-template/lib/easing/easing.js"></script>
+<script src="~/ecommerce-html-template/lib/slick/slick.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="~/ecommerce-html-template/js/main.js"></script>
+
+
+
+
+

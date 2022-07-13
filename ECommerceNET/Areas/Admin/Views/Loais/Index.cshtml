@@ -1,0 +1,192 @@
+﻿@model  IEnumerable<ECommerceNET.Areas.Admin.Models.User_Loai>
+
+  
+@{
+    ViewData["Title"] = "LoaisController";
+    Layout = "_BackEndAdmin";
+}
+
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+
+
+    <!-- Main Content -->
+    <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+            <!-- Sidebar Toggle (Topbar) -->
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- Topbar Search -->
+            <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                <div class="input-group">
+                    <input type="text" id="keyword" class="form-control bg-light border-0 small" placeholder="Tìm loại sản phẩm"
+                           aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <script>
+                $(document).ready(function () {
+                    $("#keyword").keyup(function () {
+                        $.ajax({
+                            url: "/Admin/Loais/TimAjax",
+                            data: {
+                                keyword: $("#keyword").val().trim(),
+                            },
+                            type: "POST",
+                            success: function (data) {
+                                $("#kqua").html(data);
+                            }
+                        });
+                    });
+                });
+            </script>
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+
+
+
+                <!-- Nav Item - User Information -->
+                <li class="nav-item dropdown no-arrow">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">@ViewBag.tenadmin</span>
+                        <img class="img-profile rounded-circle"
+                             src="~/startbootstrap-sb-admin-2-gh-pages/img/undraw_profile.svg">
+                    </a>
+                    <!-- Dropdown - User Information -->
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                         aria-labelledby="userDropdown">
+
+
+                        <div class="dropdown-divider"></div>
+                        <a id="outad" class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            Logout
+                        </a>
+                    </div>
+                </li>
+
+            </ul>
+
+        </nav>
+        <script>
+            $(document).ready(function () {
+                $("#outad").click(function () {
+                    $.ajax({
+                        url: "/Login/Logout",
+                        type: "POST",
+                        success: function () {
+                            location.reload();
+                        }
+                    });
+                });
+            });
+
+        </script>
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <h1>Loại Sản Phẩm</h1>
+
+            <p>
+                <a asp-action="Create">Thêm mới</a>
+            </p>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Hình ảnh
+                        </th>
+
+                        <th>
+                            Tên loại
+                        </th>
+                        <th>
+                            Loại cha
+                        </th>
+
+
+                        <th>
+                            Tiêu đề Web
+                        </th>
+                        <th>
+                            Trạng thái
+                        </th>
+                        <th>
+                            Ngày tạo
+                        </th>
+                        <th>
+                            Cập nhật lần cuối
+                        </th>
+                        <th>
+                            Người tạo
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="kqua">
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>
+                                <img src="~/images/loaisp/@Html.DisplayFor(modelItem => item.hinhAnh)" style="width:50px;height:75px " alt="@Html.DisplayFor(modelItem => item.tenLoaiSP)" />
+
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.tenLoaiSP)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.typeLoai)
+                            </td>
+
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.metaTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.trangThai)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ngayTao)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ngayCapNhat)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.hoUser) @Html.DisplayFor(modelItem => item.tenUser)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.idLoaiSP">Sửa</a> |
+                                <a asp-action="Details" asp-route-id="@item.idLoaiSP">Xem</a> |
+                                <a asp-action="Delete" asp-route-id="@item.idLoaiSP">Xóa</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+
+
+
+
+
+</div>

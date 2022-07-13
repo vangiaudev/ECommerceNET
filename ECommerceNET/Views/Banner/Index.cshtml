@@ -1,0 +1,22 @@
+﻿@model IEnumerable<ECommerceNET.Entities.Banner>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+<div class="header-slider normal-slider">
+    @foreach (var item in Model)
+    {
+        <div class="header-slider-item">
+            <img src="~/images/banner/@Html.DisplayFor(modelItem => item.hinhAnh)" alt="Slider Image" style="width:1500px; height:800px" />
+        </div>
+    }
+</div>
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="~/ecommerce-html-template/lib/easing/easing.js"></script>
+<script src="~/ecommerce-html-template/lib/slick/slick.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="~/ecommerce-html-template/js/main.js"></script>

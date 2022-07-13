@@ -1,0 +1,238 @@
+﻿
+
+<!DOCTYPE html>
+
+<html lang="vi-VN">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NVG4W9R6GQ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-NVG4W9R6GQ');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NBWLFBK');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Mua quần áo tại YANStore, thanh toán nhanh chóng qua PayPal, VNPay, chính sách giao hàng miễn phí tận nhà! Còn chần chừ gì nữa, hãy đến với YANStore để được tư vấn thêm với nhân viên trực Messenger và TawkTo 24/24, CHAT NGAY!!!" />
+    <meta name="keywords" content="YANStore, thời trang 2021, thời trang xuân hạ thu đông, SALE đỉnh cao, FREESHIP tận nhà, thanh toán nhanh chóng tiện lợi" />
+    <link rel="canonical" href="@ViewBag.url" />
+
+    <meta property="og:url" content="@ViewBag.url" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@ViewBag.title" />
+    <meta property="og:description" content="@ViewBag.description" />
+    <meta property="og:image" content="@ViewBag.img" />
+
+    <!--<link href="img/favicon.ico" rel="icon">-->
+    <link rel="shortcut icon" type="image/png" href="/favicon_YANStore.png" alt="favicon"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Google Fonts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.0.18/sweetalert2.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="~/ecommerce-html-template/lib/slick/slick.css" rel="stylesheet">
+    <link href="~/ecommerce-html-template/lib/slick/slick-theme.css" rel="stylesheet">
+    <script src="~/js/site.js"></script>
+    <!-- Template Stylesheet -->
+    <link href="~/ecommerce-html-template/css/style.css" rel="stylesheet">
+
+    @RenderSection("css", required: false)
+</head>
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NBWLFBK"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    
+
+    <!-- Top bar Start -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <i class="fa fa-envelope"></i>
+                    contact.yanstore@gmail.com
+                </div>
+                <div class="col-sm-6">
+                    <i class="fa fa-phone-alt"></i>
+                    (+84) 964-964-964
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top bar End -->
+    <!-- Nav Bar Start -->
+    <div class="nav">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+                <a href="#" class="navbar-brand">MENU</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav mr-auto">
+                        <a href="/home/index/" class="nav-item nav-link active">Trang Chủ</a>
+                        
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Thời Trang Nam</a>
+                            <div class="dropdown-menu" id="loadloaimenuTTNam">
+
+                            </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Thời Trang Nữ</a>
+                            <div class="dropdown-menu" id="loadloaimenuTTNu">
+
+                            </div>
+                        </div>
+                        <a href="/gioithieu/index/" class="nav-item nav-link">Giới Thiệu</a>
+                        <a href="/lienhe/index/" class="nav-item nav-link">Liên Hệ</a>
+
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">@ViewBag.houser @ViewBag.tenuser</a>
+                            <div class="dropdown-menu">
+                                <a href="#" id="accmenu4" class="dropdown-item">@ViewBag.accmenu4</a>
+                                <a href="/Login/" id="accmenu1" class="dropdown-item">@ViewBag.accmenu1</a>
+                                <a href="#" id="accmenu2" class="dropdown-item">@ViewBag.accmenu2</a>
+                                <a href="#" id="accmenu3" class="dropdown-item">@ViewBag.accmenu3</a>
+                            </div>
+                            <script>
+                                $(document).ready(function () {
+                                    $("#accmenu3").click(function () {
+                                        $.ajax({
+                                            url: "/Login/Logout",
+                                            type: "POST",
+                                            success: function () {
+                                                location.reload();
+                                            }
+                                        });
+
+                                    });
+                                    if ($("#accmenu1").html() == "Thông tin cá nhân") {
+                                        $("#accmenu1").attr('href', '/User/index/');
+                                    }
+
+                                    if ($("#accmenu2").html() == "") {
+                                        $("#accmenu2").hide();
+                                    }
+                                    else {
+                                        $("#accmenu2").show();
+                                        $("#accmenu2").attr('href', '/Donhang/lichsudonhang/');
+                                    }
+
+                                    if ($("#accmenu3").html() == "") {
+                                        $("#accmenu3").hide();
+                                    }
+                                    else {
+                                        $("#accmenu3").show();
+
+                                    }
+
+                                    if ($("#accmenu4").html() == "") {
+                                        $("#accmenu4").hide();
+                                    }
+                                    else {
+
+
+                                        if ($("#accmenu4").html() != "") {
+                                            $("#accmenu4").show();
+                                            if ($("#accmenu4").html() == "Trang quản trị") {
+                                                $("#accmenu4").attr('href', '/Admin/HomeAdmin');
+                                            }
+                                            else {
+                                                $("#accmenu4").attr('href', '/Staff');
+                                            }
+                                        }
+
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Nav Bar End -->
+    <!-- Bottom Bar Start -->
+    <div class="bottom-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <a href="/home/index/">
+                            <img src="~/ecommerce-html-template/img/logo_app.png" alt="YANStore_Logo" />
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="search">
+                        <input type="text" placeholder="Search" id="timkiemmain">
+                        <button id="tka"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="user">
+                        <a href="/giohang/index/" class="btn cart">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bottom Bar End -->
+
+
+    @RenderSection("breadcrum", required: false)
+
+
+    @RenderBody()
+
+    @await Html.PartialAsync("_FrontEndFooter")
+
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="~/ecommerce-html-template/lib/easing/easing.js"></script>
+    <script src="~/ecommerce-html-template/lib/slick/slick.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="~/ecommerce-html-template/js/main.js"></script>
+
+</body>
+</html>

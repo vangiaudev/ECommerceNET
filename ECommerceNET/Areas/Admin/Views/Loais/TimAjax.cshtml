@@ -1,0 +1,80 @@
+﻿@model IEnumerable<ECommerceNET.Areas.Admin.Models.User_Loai>
+<!--
+
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tenLoaiSP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hinhAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.metaTitle)
+            </th>
+           
+            <th>
+                @Html.DisplayNameFor(model => model.trangThai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngayTao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngayCapNhat)
+            </th>
+            <th>
+               
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    -->
+@foreach (var item in Model)
+{
+<tr>
+
+    <td>
+        <img src="~/images/loaisp/@Html.DisplayFor(modelItem => item.hinhAnh)" style="width:50px;height:75px " alt="@Html.DisplayFor(modelItem => item.tenLoaiSP)" />
+
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.tenLoaiSP)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.typeLoai)
+    </td>
+
+
+    <td>
+        @Html.DisplayFor(modelItem => item.metaTitle)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.trangThai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ngayTao)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.ngayCapNhat)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.hoUser) @Html.DisplayFor(modelItem => item.tenUser)
+    </td>
+    <td>
+        <a asp-action="Edit" asp-route-id="@item.idLoaiSP">Sửa</a> |
+        <a asp-action="Details" asp-route-id="@item.idLoaiSP">Xem</a> |
+        <a asp-action="Delete" asp-route-id="@item.idLoaiSP">Xóa</a>
+    </td>
+</tr>
+}
+<!--
+       </tbody>
+</table>
+-->

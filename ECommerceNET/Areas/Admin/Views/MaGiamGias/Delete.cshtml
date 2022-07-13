@@ -1,0 +1,65 @@
+﻿@model ECommerceNET.Entities.MaGiamGia
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_BackEndAdmin";
+}
+
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+
+    <h3>Bạn có chắc muốn xóa?</h3>
+    <div>
+        <h4>MaGiamGia</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                Code
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.codeMGG)
+            </dd>
+            <dt class="col-sm-2">
+                Tên mã giảm giá
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.tenMGG)
+            </dd>
+            <dt class="col-sm-2">
+                Số tiền giảm
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.giaTri)
+            </dd>
+            <dt class="col-sm-2">
+                Số lượng
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.soLuong)
+            </dd>
+            <dt class="col-sm-2">
+                Trạng thái
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.trangThai)
+            </dd>
+            <dt class="col-sm-2">
+                Ngày tạo
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ngayTao)
+            </dd>
+            <dt class="col-sm-2">
+                Ngày cập nhật
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.ngayCapNhat)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="codeMGG" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-action="Index">Back to List</a>
+        </form>
+    </div>
+    </div>

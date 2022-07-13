@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewData["Title"] = "YAN Store";
+    Layout = "_FrontEnd";
+}
+<!-- Login Start -->
+<div class="login">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="register-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Họ</label>
+                            <input class="form-control" id="houser" type="text" placeholder="Họ">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Tên</label>
+                            <input class="form-control" id="tenuser" type="text" placeholder="Tên">
+                        </div>
+                        <div class="col-md-6">
+                            <label>E-mail</label>
+                            <input class="form-control" id="emailuser" type="text" placeholder="E-mail">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Số điện thoại</label>
+                            <input class="form-control" id="sdtuser" type="text" placeholder="Số điện thoại">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label style="display:block">Ngày sinh</label>
+
+                            <select class="form-control" id="ngaysinh" style="width:73px;display:inline">
+                                <option value="1" selected="selected">1</option>
+
+                                <script>
+                                    var i;
+                                    // Lặp 10 lần từ 0 -> 9
+                                    // Bước nhảy là i++ nên sau mỗi lần lặp i tăng lên 1 đơn vị
+                                    for (i = 2; i <= 31; i++) {
+                                        document.write('<option value="' + i + '" >' + i + '</option>');
+                                    }
+                                </script>
+                            </select>
+
+
+                            <select class="form-control" id="thangsinh" style="width:122px;display:inline">
+                                <option value="1" selected="selected">Tháng 1</option>
+
+                                <script>
+                                    var i;
+                                    // Lặp 10 lần từ 0 -> 9
+                                    // Bước nhảy là i++ nên sau mỗi lần lặp i tăng lên 1 đơn vị
+                                    for (i = 2; i <= 12; i++) {
+                                        document.write('<option value="' + i + '" >Tháng ' + i + '</option>');
+                                    }
+                                </script>
+                            </select>
+
+                            <select class="form-control" id="namsinh" style="width:90px;display:inline">
+
+
+                                <script>
+
+                                    var i;
+                                    // Lặp 10 lần từ 0 -> 9
+                                    // Bước nhảy là i++ nên sau mỗi lần lặp i tăng lên 1 đơn vị
+                                    for (i = 2005; i >= 1950; i--) {
+                                        document.write('<option value="' + i + '" selected="selected">' + i + '</option>');
+                                    }
+                                </script>
+                            </select>
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <label>Giới tính</label>
+                            <select class="form-control" id="gioiTinh">
+                                <option value="0" selected="selected">Không xác định</option>
+                                <option value="1">Nam</option>
+                                <option value="2">Nữ</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label>Mật khẩu</label>
+                            <input  class="form-control" type="password" id="pwuser" placeholder="Mật khẩu">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Nhập lại mật khẩu</label>
+                            <input class="form-control" type="password" id="repwuser" placeholder="Nhập lại mật khẩu">
+                        </div>
+                        <div class="col-md-12">
+                            <button class="btn" id="dky">Đăng ký</button>
+                        </div>
+                        <div class="col-md-12" id="kqua2" style="color:red">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="login-form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>E-mail / Số điện thoại</label>
+                            <input class="form-control" id="emaillogin" type="text" placeholder="E-mail / Số điện thoại">
+                        </div>
+                        <div class="col-md-6">
+                            <label>Mật khẩu</label>
+                            <input class="form-control" id="mkhaulogin" type="password" placeholder="Mật khẩu">
+                        </div>
+                        <div class="col-md-12">
+                            
+                                <a href="/Login/QuenMatKhau/" >Quên mật khẩu</a>
+                           
+                        </div>
+                        <p></p>
+                        <div class="col-md-12">
+                            <button type="submit" id="submitlogin" class="btn">Đăng nhập</button>
+
+                        </div>
+                        <div id="kqua" class="col-md-12" style="margin-top:5px;color:red;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- Login End -->

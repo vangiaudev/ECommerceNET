@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ECommerceNET.Areas.Admin.Models.Sanpham_Loai>
+
+@{
+    ViewData["Title"] = "TimAjax";
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giaSP)
+        </td>
+        <td>
+            <img src="~/images/sanpham/@Html.DisplayFor(modelItem => item.hinhAnh)" style="width:60px;height:80px" />
+
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.soLuongKho)
+        </td>
+
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trangThai)
+        </td>
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.idSP">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.idSP">Details</a> |
+            <a asp-action="Delete" asp-route-id="@item.idSP">Delete</a>
+        </td>
+    </tr>
+}

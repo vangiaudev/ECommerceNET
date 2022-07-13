@@ -1,0 +1,86 @@
+﻿@{ 
+    Layout = "_FrontEnd";
+}
+<div class="col-md-6">
+    <label>@ViewBag.tieude</label>
+    <input class="form-control" id="maxacnhan" type="text" placeholder="Mã xác nhận">
+</div>
+<div class="col-md-12">
+    <button class="btn" id="xacnhan">Xác nhận</button>
+</div>
+<div id="kqua" style="color:red"></div>
+<input id="typemxn" value="@ViewBag.type" hidden/>
+
+<script>
+
+    $(document).ready(function () {
+        $("#xacnhan").click(function () {
+            if ($("#typemxn").val() == "0") {
+                $.ajax({
+
+                    url: "/Login/Xacnhan/",
+                    data: {
+                        codex: $("#maxacnhan").val().trim(),
+
+                    },
+                    type: "POST",
+                    success: function (data) {
+
+                        if (data == "0") {
+                            $("#kqua").html("Mã xác nhận chưa đúng!")
+                        }
+                        else {
+                            window.location = "/Home/index/"
+                        }
+
+                    },
+                });
+
+            }
+            else if ($("#typemxn").val() == "1") {
+                var x = navigator.appVersion;
+                $.ajax({
+
+                    url: "/Login/XacnhanTrinhDuyet/",
+                    data: {
+                        codex: $("#maxacnhan").val().trim(),
+                        x: x,
+                    },
+                    type: "POST",
+                    success: function (data) {
+
+                        if (data == "0") {
+                            $("#kqua").html("Mã xác nhận chưa đúng!")
+                        }
+                        else {
+                            window.location = "/Home/index/"
+                        }
+
+                    },
+                });
+            }
+            else {
+                $.ajax({
+
+                    url: "/Login/XacnhanQMK/",
+                    data: {
+                        codex: $("#maxacnhan").val().trim(),
+       
+                    },
+                    type: "POST",
+                    success: function (data) {
+
+                        if (data == "0") {
+                            $("#kqua").html("Mã xác nhận chưa đúng!")
+                        }
+                        else {
+                            window.location = "/DoiMatKhau/index/";
+                        }
+
+                    },
+                });
+            }
+            
+        });
+    });
+</script>

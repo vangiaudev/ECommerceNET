@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ECommerceNET.Areas.Admin.Models.User_Loai>
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+  
+
+    <h3>Xác nhận xóa?</h3>
+    @foreach (var item in Model)
+    {
+        <div>
+            <h4>Loại sản phẩm</h4>
+            <hr />
+            <dl class="row">
+                <dt class="col-sm-2">
+                    Hình ảnh
+                </dt>
+                <dd class="col-sm-10">
+
+                    <img src="~/images/loaisp/@Html.DisplayFor(modelItem => item.hinhAnh)" width="150" height="225" />
+                </dd>
+                <dt class="col-sm-2">
+                    Tên loại sản phẩm
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.tenLoaiSP)
+                </dd>
+                <dt class="col-sm-2">
+                    Loại cha
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.typeLoai)
+                </dd>
+
+                <dt class="col-sm-2">
+                    Tiêu đề WEB
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.metaTitle)
+                </dd>
+
+                <dt class="col-sm-2">
+                    Trạng thái
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.trangThai)
+                </dd>
+                <dt class="col-sm-2">
+                    Ngày tạo
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.ngayTao)
+                </dd>
+                <dt class="col-sm-2">
+                    Ngày cập nhật
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.ngayCapNhat)
+                </dd>
+                <dt class="col-sm-2">
+                    Người tạo
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.hoUser) @Html.DisplayFor(modelItem => item.tenUser)
+                </dd>
+            </dl>
+
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="@item.idLoaiSP" />
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <a asp-action="Index">Back to List</a>
+            </form>
+        </div>
+    }
+</div>

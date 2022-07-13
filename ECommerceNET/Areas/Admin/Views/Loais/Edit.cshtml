@@ -1,0 +1,77 @@
+﻿@model ECommerceNET.Entities.LoaiSP
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+    <h1>Sửa loại sản phẩm</h1>
+
+   
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="idLoaiSP" />
+                <div class="form-group">
+                    <label asp-for="tenLoaiSP" class="control-label">Tên loại sản phẩm</label>
+                    <input asp-for="tenLoaiSP" class="form-control" />
+                    <span asp-validation-for="tenLoaiSP" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="hinhAnh" class="control-label">Hình ảnh</label>
+                    <input name="hinhAnh" type="file" class="form-control" />
+
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="typeLoai" class="control-label">Loại cha</label>
+
+
+
+                    <select asp-for="typeLoai" class="form-control">
+                        <option value="0" selected="selected">Thời trang nam</option>
+                        <option value="1">Thời trang nữ</option>
+
+                    </select>
+
+
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="metaTitle" class="control-label">Tiêu đề WEB</label>
+                    <input asp-for="metaTitle" class="form-control" />
+                    <span asp-validation-for="metaTitle" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+
+                    <label asp-for="trangThai" class="control-label">Trạng thái</label>
+
+
+
+                    <select asp-for="trangThai" class="form-control">
+                        <option value="Hiển thị" selected="selected">Hiển thị</option>
+                        <option value="Ẩn">Ẩn</option>
+
+                    </select>
+
+
+                    <span asp-validation-for="trangThai" class="text-danger"></span>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    </div>

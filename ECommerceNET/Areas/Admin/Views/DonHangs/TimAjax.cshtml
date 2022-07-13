@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ECommerceNET.Entities.DonHang>
+
+@{
+    ViewData["Title"] = "TimAjax";
+    Layout = null;
+}
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idDH)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngayDat)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.eMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sdtDH)
+        </td>
+
+
+        <td>
+            @Html.DisplayFor(modelItem => item.tongSoTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.trangThai)
+        </td>
+
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.idDH">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.idDH">Details</a> |
+
+        </td>
+    </tr>
+}

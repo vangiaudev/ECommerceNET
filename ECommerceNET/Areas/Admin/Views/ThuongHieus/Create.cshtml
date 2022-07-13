@@ -1,0 +1,51 @@
+﻿@model ECommerceNET.Entities.ThuongHieu
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+
+    <h1>Tạo thương hiệu</h1>
+
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="tenThuongHieu" class="control-label">Tên Thương hiệu</label>
+                    <input asp-for="tenThuongHieu" class="form-control" />
+                    <span asp-validation-for="tenThuongHieu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="hinhLogo" class="control-label">Hình logo</label>
+
+                    <input name="hinhAnh" type="file" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="sdtThuongHieu" class="control-label">SĐT</label>
+                    <input asp-for="sdtThuongHieu" class="form-control" />
+                    <span asp-validation-for="sdtThuongHieu" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="emailThuongHieu" class="control-label">Email</label>
+                    <input asp-for="emailThuongHieu" class="form-control" />
+                    <span asp-validation-for="emailThuongHieu" class="text-danger"></span>
+                </div>
+         
+
+
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    </div>

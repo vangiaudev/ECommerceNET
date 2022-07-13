@@ -1,0 +1,60 @@
+﻿@model IEnumerable<ECommerceNET.Entities.DonHang>
+
+@{
+    ViewData["Title"] = "LichSuDonHang";
+    Layout = "_FrontEnd";
+}
+
+
+
+<!-- My Account Start -->
+<div class="my-account">
+    <div class="container-fluid">
+        <div class="row">
+          
+            <div class="col-md-12">
+               
+                   
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                    
+                                        <th>Ngày đặt hàng</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Trạng thái</th>
+                                        <th>Chức năng</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach(var item in Model)
+                                    {
+
+
+                                        <tr>
+                                            <td>@item.idDH</td>
+                                            <td>@item.ngayDat</td>
+                                            <td>@item.tongSoTien đ</td>
+                                            <td>@item.trangThai</td>
+                                            <td><a href="/donhang/chitietdonhang/@item.idDH/" class="btn">View</a></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                 
+              
+            </div>
+        </div>
+    </div>
+</div>
+<!-- My Account End -->
+
+
+
+
+
+
+

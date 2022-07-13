@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ECommerceNET.Entities.Banner>
+
+@{
+    ViewData["Title"] = "TimAjax";
+}
+@foreach (var item in Model)
+{
+        <tr>
+            <td>
+                <img src="~/images/banner/@Html.DisplayFor(modelItem => item.hinhAnh)" style="width:300px;height:100px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngayTao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngayBatDau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngayKetThuc)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.idBanner">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.idBanner">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.idBanner">Delete</a>
+            </td>
+        </tr>
+}

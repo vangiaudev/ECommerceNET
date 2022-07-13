@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "_FrontEnd";
+}
+<!-- Checkout Start -->
+<div class="checkout">
+    <div class="container-fluid">
+        <form asp-action="xacnhancheckout" asp-controller="GioHang">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="checkout-inner">
+                        <div class="billing-address">
+                            <h2>Thông tin khách hàng</h2>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Họ</label>
+                                    <input class="form-control" name="ho" id="ho" type="text" placeholder="First Name" value="@ViewBag.ho">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Tên</label>
+                                    <input class="form-control" name="ten" id="ten" type="text" placeholder="Last Name" value="@ViewBag.ten">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>E-mail</label>
+                                    <input class="form-control" name="email" id="email" type="text" placeholder="E-mail" value="@ViewBag.email">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Số điện thoại</label>
+                                    <input class="form-control" name="sdt" id="sdt" maxlength="10" type="text" placeholder="Mobile No" value="@ViewBag.sdt">
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Địa chỉ</label>
+                                    <input class="form-control" name="diachi" id="diachi" type="text" placeholder="Address" value="@ViewBag.diachi">
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Ghi chú</label>
+                                    <input class="form-control" name="ghichu" id="ghichu" type="text" placeholder="Ghi chú">
+                                </div>
+                                
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="checkout-inner">
+                        <div class="checkout-summary">
+                            <h1>Thông tin thanh toán</h1>
+                        
+                            <p>Giá trị hàng hóa<span>@ViewBag.tth</span></p>
+                            <input hidden name="tth" id="tth" value="@ViewBag.tth">
+                            <input hidden name="mggvl" id="mggvl" value="@ViewBag.mggvl">
+                            <input hidden name="mggvlcode" id="mggvlcode" value="@ViewBag.mggvlcode">
+                            <input hidden name="tongcong" id="tongcong" value="@ViewBag.tongcong">
+                            <p class="sub-total">Giảm giá<span>@ViewBag.mggvl</span></p>
+
+                            <p class="ship-cost">Phí giao hàng<span>FREE</span></p>
+                            <h2>Tổng cộng<span>@ViewBag.tongcong</span></h2>
+                        </div>
+
+                        <div class="checkout-payment">
+
+                            <div class="checkout-btn">
+                                <button style="height:80px">Đặt hàng và thanh toán tại nhà</button>
+                                <hr />
+                            </div>
+                            <div class="checkout-btn">
+                                <p style="margin-top:10px">Đặt hàng và thanh toán qua PayPal</p>
+                                <div style="text-align:center">
+
+                                    <img id="paypalcheckout" src="~/images/banking/pngaaa.com-607605.png" width="200" height="70" />
+                                </div>
+                                <hr />
+                            </div>
+                            <div class="checkout-btn">
+                                <p style="margin-top:10px">Đặt hàng và thanh toán qua VNPay</p>
+                                <div style="text-align:center">
+                                    
+                                    <img id="vnpaycheckout" src="~/images/banking/qr-vnpayewallet.png" width="200" height="70" />
+                                </div>
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+               
+        </form>
+    </div>
+</div>
+<!-- Checkout End -->

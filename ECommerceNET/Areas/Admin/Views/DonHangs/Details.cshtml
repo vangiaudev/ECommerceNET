@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ECommerceNET.Entities.ChiTietDonHang>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+    <h1>Chi tiết đơn hàng</h1>
+    <hr />
+    <h4>Ngày đặt: @ViewBag.ngaydat</h4>
+    <h4>Trạng thái: @ViewBag.trangthai</h4>
+
+    <hr />
+
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    Hình
+                </th>
+
+                <th>
+                    Tên sản phẩm
+                </th>
+                <th>
+                    Đơn giá
+                </th>
+                <th>
+                    Số lượng
+                </th>
+                <th>
+                    Thành tiền
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        <img src="~/images/sanpham/@Html.DisplayFor(modelItem => item.hinhSP)" style="width:60px;height:80px" />
+                        
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tenSP)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.donGia)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.soLuong)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.thanhTien)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr />
+    <h4>Tổng tiền hàng: @ViewBag.tth</h4>
+    <h4>Giảm giá: @ViewBag.magg</h4>
+    <h4>Tổng cộng: @ViewBag.tongcong</h4>
+    <hr />
+
+    <h2>Thông tin người nhận</h2>
+    <h4>Họ tên: @ViewBag.hodh @ViewBag.tendh</h4>
+    <h4>Địa chỉ: @ViewBag.diachi</h4>
+    <h4>Email: @ViewBag.email</h4>
+    <h4>SĐT" @ViewBag.sdt</h4>
+    <h4>Ghi chú: @ViewBag.ghichu</h4>
+    </div>
+<hr />

@@ -1,0 +1,77 @@
+﻿
+
+@model IEnumerable<ECommerceNET.Entities.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_FrontEnd";
+}
+
+<!-- My Account Start -->
+<div class="my-account">
+    <div class="container-fluid">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-12">
+                   
+                            <h4>Thông tin tài khoản</h4>
+                            <div class="row">
+                               
+                                <div class="col-md-6">
+                                    <input class="form-control" id="hoacc" type="text" value="@Html.DisplayFor(modelItem => item.hoUser)" placeholder="Họ">
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="tenacc" type="text" value="@Html.DisplayFor(modelItem => item.tenUser)" placeholder="Tên">
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="sdtacc" type="text" value="@Html.DisplayFor(modelItem => item.sdtUser)" placeholder="Số điện thoại">
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="emailacc" type="text" value="@item.emailUser" placeholder="Email">
+                                </div>
+                                <div class="col-md-12">
+                                    <input class="form-control" id="addacc" type="text" value="@Html.DisplayFor(modelItem => item.diaChi)" placeholder="Địa chỉ">
+                                </div>
+                                <div class="col-md-12">
+                                    <button id="submitup1" class="btn">Cập nhật thông tin</button>
+                                    <div id="kqua1" style="color:red">
+
+                                    </div>
+                                    <br><br>
+                                </div>
+                            </div>
+                            <h4>Mật khẩu</h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input class="form-control" id="pw" type="password" placeholder="Current Password">
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="newpw" type="text" placeholder="New Password">
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="form-control" id="repw" type="text" placeholder="Confirm Password">
+                                </div>
+                                <div class="col-md-12">
+                                    <button id="submitup2" class="btn">Xác nhận</button>
+                                </div>
+                                <div id="kqua2" style="color:red">
+
+                                </div>
+                            </div>
+                        </div>
+                  
+               
+            }
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

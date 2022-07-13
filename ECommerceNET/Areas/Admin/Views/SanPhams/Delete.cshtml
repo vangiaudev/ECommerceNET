@@ -1,0 +1,92 @@
+﻿@model IEnumerable<ECommerceNET.Areas.Admin.Models.Sanpham_Loai>
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_BackEndAdmin";
+}
+@foreach (var item in Model)
+{
+    <div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+        <h3>Bạn có chắc muốn xóa?</h3>
+        <div>
+
+            <hr />
+            <dl class="row">
+
+                <dt class="col-sm-2">
+                    Tên sản phẩm
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.tenSP)
+                </dd>
+                <dt class="col-sm-2">
+                    Giá
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.giaSP) đ
+                </dd>
+                <dt class="col-sm-2">
+                    Hình ảnh
+                </dt>
+                <dd class="col-sm-10">
+                    <img src="~/images/sanpham/@Html.DisplayFor(modelItem => item.hinhAnh)" style="width:60px;height:80px" />
+                </dd>
+                <dt class="col-sm-2">
+                    Lượt xem
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.luotXem)
+                </dd>
+                <dt class="col-sm-2">
+                    Số lượng tồn kho
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.soLuongKho)
+                </dd>
+                <dt class="col-sm-2">
+                    Lượt mua
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.luotMua)
+                </dd>
+                <dt class="col-sm-2">
+                    Mô tả
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.moTa)
+                </dd>
+                <dt class="col-sm-2">
+                    Loại
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.LoaiSP)
+                </dd>
+                <dt class="col-sm-2">
+                    Trạng thái
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.trangThai)
+                </dd>
+                <dt class="col-sm-2">
+                    Ngày tạo
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.ngayTao)
+                </dd>
+                <dt class="col-sm-2">
+                    Ngày cập nhật
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.ngayCapNhat)
+                </dd>
+
+
+            </dl>
+
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="@item.idSP" />
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <a asp-action="Index">Back to List</a>
+            </form>
+        </div>
+    </div>  }

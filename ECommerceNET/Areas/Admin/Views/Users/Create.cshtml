@@ -1,0 +1,93 @@
+﻿@model ECommerceNET.Entities.User
+
+@{
+    ViewData["Title"] = "UsersController";
+    Layout = "_BackEndAdmin";
+}
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+
+    <h1>Thêm mới tài khoản</h1>
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="hoUser" class="control-label">Họ</label>
+                    <input asp-for="hoUser" class="form-control" />
+                    <span asp-validation-for="hoUser" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="tenUser" class="control-label">Tên</label>
+                    <input asp-for="tenUser" class="form-control" />
+                    <span asp-validation-for="tenUser" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="sdtUser" class="control-label">Số điện thoại</label>
+                    <input asp-for="sdtUser" class="form-control" />
+                    <span asp-validation-for="sdtUser" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="emailUser" class="control-label">Email</label>
+                    <input asp-for="emailUser" class="form-control" />
+                    <span asp-validation-for="emailUser" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="matKhau" class="control-label">Mật khẩu</label>
+                    <input asp-for="matKhau" class="form-control" type="password" />
+                    <span asp-validation-for="matKhau" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="gioiTinh" class="control-label">Giới tính</label>
+                    <select asp-for="gioiTinh" class="form-control">
+                        <option value="0" selected="selected">Không xác định</option>
+                        <option value="1">Nam</option>
+                        <option value="2">Nữ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ngaySinh" class="control-label">Ngày sinh</label>
+                    <input asp-for="ngaySinh" class="form-control" />
+                    <span asp-validation-for="ngaySinh" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="diaChi" class="control-label">Địa chỉ</label>
+                    <input asp-for="diaChi" class="form-control" />
+                    <span asp-validation-for="diaChi" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="hinhAVT" class="control-label">Hình ảnh</label>
+                    <input name="hinhAnh" type="file" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="trangThai" class="control-label">Trạng thái</label>
+                    <select asp-for="trangThai" class="form-control">
+                        <option value="Đang hoạt động" selected="selected">Đang hoạt động</option>
+                        <option value="Đang khóa">Đang khóa</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="vaiTro" class="control-label">Vai trò</label>
+                    <select asp-for="vaiTro" class="form-control">
+                        <option value="users" selected="selected">Người dùng</option>
+                        <option value="staffs">Nhân viên</option>
+                        <option value="admin">Quản trị</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</div>

@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "_FrontEnd";
+}
+<div class="col-md-6">
+    <label>Nhập email tài khoản:</label>
+    <input class="form-control" id="maxacnhan" type="text" placeholder="Nhập Email">
+</div>
+<div class="col-md-12">
+    <button class="btn" id="xacnhan">Xác nhận</button>
+</div>
+<div id="kqua" style="color:red"></div>
+
+
+<script>
+
+    $(document).ready(function () {
+        $("#xacnhan").click(function () {
+            
+                $.ajax({
+
+                    url: "/Login/CheckQuenMatKhau/",
+                    data: {
+                        email: $("#maxacnhan").val().trim(),
+
+                    },
+                    type: "POST",
+                    success: function (data) {
+
+                        if (data == "0") {
+                            $("#kqua").html("Email không tồn tại!")
+                        }
+                        else if (data == "sendmail") {
+                           
+                            window.location = "/Sendmail/index/"
+                        }
+                        else {
+                            $("#kqua").html(data)
+                        }
+
+                    },
+                });
+
+           
+            
+
+        });
+    });
+</script>

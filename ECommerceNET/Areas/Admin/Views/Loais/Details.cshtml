@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ECommerceNET.Areas.Admin.Models.User_Loai>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_BackEndAdmin";
+}
+<div id="content-wrapper" class="d-flex flex-column" style="padding:20px">
+    <h1>Thông tin chi tiết</h1>
+    @foreach (var item in Model)
+    {
+        <div>
+    
+            <hr />
+
+            <dl class="row">
+                <dt class="col-sm-2">
+                    Hình ảnh
+                </dt>
+                <dd class="col-sm-10">
+
+                    <img src="~/images/loaisp/@Html.DisplayFor(modelItem => item.hinhAnh)" width="150" height="225" />
+                </dd>
+                <dt class="col-sm-2">
+                    Tên loại sản phẩm
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.tenLoaiSP)
+                </dd>
+
+                <dt class="col-sm-2">
+                    Loại cha
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.typeLoai)
+                </dd>
+
+                <dt class="col-sm-2">
+                    Tiêu đề WEB
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.metaTitle)
+                </dd>
+
+                <dt class="col-sm-2">
+                    Trạng thái
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.trangThai)
+                </dd>
+                <dt class="col-sm-2">
+                    Ngày tạo
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.ngayTao)
+                </dd>
+                <dt class="col-sm-2">
+                    Ngày cập nhật
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.ngayCapNhat)
+                </dd>
+                <dt class="col-sm-2">
+                    Người tạo
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(modelItem => item.hoUser) @Html.DisplayFor(modelItem => item.tenUser)
+                </dd>
+            </dl>
+
+        </div>
+
+        <div>
+            <a asp-action="Edit" asp-route-id="@item.idLoaiSP">Edit</a> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    }
+</div>
