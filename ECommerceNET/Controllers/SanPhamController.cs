@@ -81,7 +81,7 @@ namespace ECommerceNET.Controllers
             _context.SaveChanges();
             var hostname = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}";
 
-            ViewBag.url = hostname + "/" + SlugGenerator.SlugGenerator.GenerateSlug(ct.tenSP) + "/";
+            ViewBag.url = hostname + "/" + SlugGenerator.SlugGenerator.GenerateSlug(ct.tenSP) +"-" + ct.idSP+ "/";
             ViewBag.title = ct.tenSP + " - YAN Store";
             ViewBag.description = ct.moTa;
             ViewBag.img = hostname + "/images/sanpham/" + ct.hinhAnh;

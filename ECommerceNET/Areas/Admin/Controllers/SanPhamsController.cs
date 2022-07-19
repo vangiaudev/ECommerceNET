@@ -64,9 +64,6 @@ namespace ECommerceNET.Areas.Admin.Controllers
                   };
 
 
-
-
-
             return View(loaisp);
         }
 
@@ -112,9 +109,6 @@ namespace ECommerceNET.Areas.Admin.Controllers
                      ngayCapNhat = c.ngayCapNhat,
 
                  };
-
-
-
 
 
             if (loaispx == null)
@@ -259,8 +253,6 @@ namespace ECommerceNET.Areas.Admin.Controllers
                         loaix.moTa = loai.moTa;
                         loaix.idLoaiSP = loai.idLoaiSP;
                         loaix.trangThai = loai.trangThai;
-
-
                         loaix.ngayCapNhat = DateTime.Now;
 
                     }

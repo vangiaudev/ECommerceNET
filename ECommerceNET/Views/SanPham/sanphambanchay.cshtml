@@ -12,9 +12,6 @@
         <div class="row align-items-center product-slider product-slider-4">
             @foreach (var item in Model)
             {
-
-
-
                 <div class="col-lg-3">
                     <form asp-action="addtocart" asp-controller="GioHang" asp-route-id="@item.idSP">
                         <div class="product-item">
@@ -23,12 +20,10 @@
                             </div>
                             <div class="product-image">
                                 <a href="/@SlugGenerator.SlugGenerator.GenerateSlug(item.tenSP)-@item.idSP/">
-
                                     <img src="~/images/sanpham/@Html.DisplayFor(modelItem => item.hinhAnh)" />
                                 </a>
                                 <div class="product-action">
-                                    <!--       <a class="add-cart-xx"><i class="fa fa-cart-plus"></i></a>
-                            -->
+                                    <!--<a class="add-cart-xx"><i class="fa fa-cart-plus"></i></a>-->
                                 </div>
                             </div>
                             <div class="product-price">

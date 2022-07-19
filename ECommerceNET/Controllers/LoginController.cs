@@ -149,8 +149,6 @@ namespace ECommerceNET.Controllers
         {
             if (mxn.code == codex)
             {
-
-
                 IPuser puser = new IPuser();
                 puser.diachiip = x;
                 puser.idUser = tamp.idUser;
@@ -158,23 +156,16 @@ namespace ECommerceNET.Controllers
                 _context.Add(puser);
                 await _context.SaveChangesAsync();
 
-
                 sessionuser xx = tamp;
 
                 HttpContext.Session.Set("ssuser", xx);
 
                 sessionuser xxx = xoatamp;
 
-
                 HttpContext.Session.Set("tamp", xxx);
-
-
 
                 Models.MaXacNhan session = xoass;
                 HttpContext.Session.Set("mxns", session);
-
-
-
 
                 return View();
             }
@@ -528,11 +519,7 @@ namespace ECommerceNET.Controllers
                     }
                 }
 
-
-
             }
-
-
 
             else
             {
