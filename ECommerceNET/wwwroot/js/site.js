@@ -294,10 +294,10 @@ $.ajax({
             //var s = $("#dangkynhanthongtinemail").val();
 
             $.ajax({
-                url: "https://gmail.us6.list-manage.com/subscribe/post?u=e985fec1fcfae851c88847638&amp;id=86ba2c5e1b",
+                url: "https://gmail.us12.list-manage.com/subscribe/post?u=69facf0ad2003da45aec198a1&amp;id=dbd58159b6",
                 data: {
                     EMAIL: $("#dangkynhanthongtinemail").val(),
-                    b_e985fec1fcfae851c88847638_86ba2c5e1b:""
+                    b_69facf0ad2003da45aec198a1_dbd58159b6:""
                 },
                 type: "POST",
                 success: function () {

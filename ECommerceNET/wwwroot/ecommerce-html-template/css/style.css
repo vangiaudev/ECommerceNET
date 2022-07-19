@@ -855,6 +855,10 @@ h2 {
     padding: 30px 0;
 }
 
+.featured-product .slick-list{
+    height: unset !important;
+}
+
 .recent-product {
     position: relative;
     padding: 30px 0;
@@ -865,6 +869,7 @@ h2 {
     padding: 20px 30px 15px 30px;
     color: #110D3E;
     background: #ffffff;
+    border: 1px solid;
 }
 
 .section-header-wrapper{
@@ -1069,6 +1074,9 @@ h2 {
 
 .product-detail .product-slider-single img {
     width: 100%;
+}
+.product-detail .product-slider-single .slick-list{
+    height: unset !important;
 }
 
 .product-detail .product-slider-single-nav {
