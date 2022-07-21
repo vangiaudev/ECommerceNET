@@ -192,11 +192,65 @@
     </div>
     <!-- Bottom Bar End -->
        
-
+    <div class="brand" style="height: 70px;">
+            <div class="container-fluid">
+                <div class="brand-slider">
+                    <div class="brand-item"><img src="https://i.imgur.com/e09jW0B.png" alt="Brand"></div>
+                    <div class="brand-item"><img src="https://i.imgur.com/TRUyh5G.png" alt="Brand"></div>
+                    <div class="brand-item"><img src="https://i.imgur.com/jyxhATs.png" alt="Brand"></div>
+                    <div class="brand-item"><img src="https://i.imgur.com/7WaFVfd.png" alt="Brand"></div>
+                    <div class="brand-item"><img src="https://i.imgur.com/YfBy1V7.png" alt="Brand"></div>
+                    <div class="brand-item"><img src="https://i.imgur.com/ZfeJikY.png" alt="Brand"></div>
+                </div>
+            </div>
+    </div>
     @RenderSection("breadcrum", required: false)
 
 
     @RenderBody()
+
+   <div class="feature">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-6 feature-col">
+                        <div class="feature-content">
+                            <i class="fab fa-cc-mastercard"></i>
+                            <h2>Thanh Toán An Toàn</h2>
+                            <p>
+                                Phương thức đa dạng, thông qua VNPay và PayPal
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 feature-col">
+                        <div class="feature-content">
+                            <i class="fa fa-truck"></i>
+                            <h2>Miễn Phí Vận Chuyển Toàn Quốc</h2>
+                            <p>
+                                FREE SHIP khi khách hàng mua từ 2 sản phẩm trở lên
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 feature-col">
+                        <div class="feature-content">
+                            <i class="fa fa-sync-alt"></i>
+                            <h2>Đổi Trả Trong Vòng 7 Ngày</h2>
+                            <p>
+                                Thoải mái đổi trả mới trong vòng 7 ngày đầu tiên nếu sản phẩm lỗi
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 feature-col">
+                        <div class="feature-content">
+                            <i class="fa fa-comments"></i>
+                            <h2>Hỗ Trợ 24/7</h2>
+                            <p>
+                                Đội ngũ nhân viên luôn luôn sẵn sàng hỗ trợ khách hàng bất cứ khi nào.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     @await Html.PartialAsync("_FrontEndFooter")
 
