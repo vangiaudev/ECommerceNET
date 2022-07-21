@@ -244,6 +244,13 @@ h2 {
     position: relative;
 }
 
+.sticky-styled{
+    position: fixed !important;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    right: 0;
+}
 
 @media (min-width: 992px) {
     .nav .container-fluid {
@@ -318,6 +325,7 @@ h2 {
     padding: 15px 0;
     background: #ffffff;
     margin-bottom: 30px;
+    margin-top: 60px;
 }
 
 .bottom-bar .logo {

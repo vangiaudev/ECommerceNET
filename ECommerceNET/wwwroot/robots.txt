@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://gonz.somee.com/sitemap.xml
+Sitemap: http://yan.somee.com/sitemap.xml
