@@ -1,8 +1,8 @@
 version: 0.0
-windows: linux
+os: linux
 files:
   - source: /
-    destination: /var/www/html/ECommerceNET
+    destination: /var/www/html/dotNetCore-sample
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
